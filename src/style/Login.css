@@ -1,0 +1,49 @@
+.Login_Form {
+    display: block;
+    background: white;
+    border-radius: 270px;
+    width: 60%;
+    margin: auto;
+    padding: 3%;
+}
+
+.Symbol_Textbox_Header {
+    background: #262AAF;
+    opacity: 90%;
+    height: auto;
+    color: white;
+    padding: 0px 5px;
+}
+
+.Symbol_Textbox_Input {
+    background: #262AAF;
+    opacity: 90%;
+    height: auto;
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0.75rem 0;
+}
+
+
+input {
+    background: none;
+    width: 95%;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 0.3rem 0;
+}
+
+.Button_Style {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 0 20px;
+}

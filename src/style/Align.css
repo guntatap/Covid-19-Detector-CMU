@@ -1,0 +1,20 @@
+.Flex {
+    display: flex;
+}
+
+.Grid {
+    display: grid;
+}
+
+.Block {
+    display: block;
+}
+
+.Center {
+    justify-content: center;
+    align-items: center;
+}
+
+.L2R {
+    flex-direction: row;
+}

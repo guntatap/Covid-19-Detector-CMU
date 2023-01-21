@@ -1,0 +1,10 @@
+body, button {
+  margin: 0;
+  font-family: 'Lekton', 'Prompt', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Lekton', 'IBM Plex Thai', sans-serif, monospace;
+}
