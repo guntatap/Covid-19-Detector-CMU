@@ -37,8 +37,14 @@ function Login() {
                 <div className='Flex'>
                     <div className='Login_Form L2R Center' style={{}}>
                         <div>
-                            <div className='Grid' style={{ gridTemplateColumns: '40% 1fr', margin: '0 5%' }}>
-                                <div className='' style={{}}> รูปภาพ </div>
+                            <div className='Grid' style={{ gridTemplateColumns: '40% 1fr', margin: '-5% 5% 0', alignItems: 'center' }}>
+                                <div className='Grid' style={{ gridTemplateColumns: '1fr', padding: '0 5%' }}>
+                                    <img src='RCQT.png' width='200' height='200' className='Block' style={{ margin: '0 auto' }} />
+                                    <div className='Grid' style={{ gridTemplateColumns: '1fr 1fr' }}>
+                                        <img src='ตรา มช.png' width='150' height='150' className='Block' style={{ margin: 'auto' }} />
+                                        <img src='กระทรวงเศรษฐกิจ.png' width='150' height='150' className='Block' style={{ margin: 'auto' }} />
+                                    </div>
+                                </div>
                                 <div>
                                     <div className='Flex'>
                                         <h1> การเข้าสู่ระบบการใช้งาน </h1>
