@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import firebaseConfig from './config/FirebaseAPI';
-import { getDatabase, ref, set } from 'firebase/database';
+import { getDatabase, ref, push, set, onChildAdded } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
 import '../style/Login.css';
 import '../style/Register.css';
 import '../style/Align.css';
-import { async } from '@firebase/util';
+import { v4 as uuidv4 } from 'uuid';
 
 function Register() {
-    // อ้างอิงการใช้ฐานข้อมูล
+
     const db = getDatabase();
 
     const [firstname, setFirstname] = useState('')
@@ -22,25 +22,22 @@ function Register() {
     // ทำให้แสดงผลหน้า Login  
     let navigate = useNavigate()
     const navigateToLogin = () => { navigate('/login') }
+
     // ทำให้บันทึกค่าขึ้นไปในฐานข้อมูล
-    const handleSubmit = async (db_username) => {
-        if (username && password) {
+    function handleSubmit(agentKey, firstnameKey, surnameKey) {
+        if (firstname && surname && agent && role && username && password && confirmPassword) {
             if (password === confirmPassword) {
-                set(ref(db, 'agents/' + 'db_username'), {
-                    db_firstnameData: firstname,
-                    db_surnameData: surname,
-                    db_gent: agent,
+                const push_db = ref(db, 'agents/' + (agentKey + '/') + (firstnameKey + ' ' + surnameKey + '/'));
+                set(push_db, {
                     db_role: role,
                     db_username: username,
                     db_password: password,
-                });
-                alert('บันทึกข้อมูลการสมัครของคุณและสามารถเข้าสู่ระบบได้')
+                })
+                alert('บันทึกข้อมูลการสมัครของคุณและสามารถเข้าสู่ระบบได้แล้ว')
                 navigateToLogin();
-            }
-            else alert('รหัสผ่านของคุณไม่ตรงกัน กรุณาแก้ไขให้ถูกต้อง')
-        }
-        else alert('คุณระบุข้อมูลที่จำเป็นยังไม่ครบถ้วน กรุณาเพิ่มข้อมูลลงไป')
-    };
+            } else { alert('คุณกรอกรหัสผ่านไม่ตรงกัน กรุณ่ตรวจสอบความถูกต้อง') }
+        } else { alert('กรุณากรอกข้อมูลให้ครบถ้วน') }
+    }
 
     const [usernameAllow, setUsernameAllow] = useState('กรุณาเชื่อมต่อกับฐานข้อมูล');
 
@@ -129,7 +126,7 @@ function Register() {
                             </div>
                             <div style={{ margin: '1.5rem 0' }}>
                                 <div className='Flex' style={{ gap: '0 15px' }} >
-                                    <button className='Button_Style' type='submit' onClick={handleSubmit} style={{ width: '125px' }}> <h2> ยืนยัน </h2> </button>
+                                    <button className='Button_Style' type='submit' onClick={() => handleSubmit(agent, firstname, surname)} style={{ width: '125px' }}> <h2> ยืนยัน </h2> </button>
                                     <button className='Button_Style' onClick={navigateToLogin} style={{ width: '125px' }}> <h2> ย้อนกลับ </h2> </button>
                                 </div>
                             </div>
