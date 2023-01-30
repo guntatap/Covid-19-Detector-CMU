@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import { AuthContextProvider } from './components/context/AuthContext'
 import './App.css';
 import Login from './components/Login'
 import Dashboard from './components/Dashboard'
@@ -25,8 +25,11 @@ function App() {
           <Route path='/waitinglist' element={<Waitinglist />} />
           <Route path='/resultation' element={<Resultation />} />
           <Route path='/ending' element={<Ending />} />
+
+
         </Routes >
       </Router>
+
     </div>
   );
 }

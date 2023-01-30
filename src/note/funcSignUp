@@ -1,0 +1,14 @@
+    // function signUp(e, agentKey, firstnameKey, surnameKey) {
+    //     e.preventDefault();
+    //     if (firstname && surname && agent && role && username && password && confirmPassword) {
+    //         if (password === confirmPassword) {
+    //             const push_db = ref(db, 'agents/' + (agentKey + '/') + (firstnameKey + ' ' + surnameKey + '/'));
+    //      set(push_db, {
+    //     db_role: role,
+    //     db_username: username,
+    //     db_password: password,
+    // })
+    //             alert('บันทึกข้อมูลการสมัครของคุณและสามารถเข้าสู่ระบบได้แล้ว')
+    //         } else { alert('คุณกรอกรหัสผ่านไม่ตรงกัน กรุณ่ตรวจสอบความถูกต้อง') }
+    //     } else { alert('กรุณากรอกข้อมูลให้ครบถ้วน') }
+    // }
