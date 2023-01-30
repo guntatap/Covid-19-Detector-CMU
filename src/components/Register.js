@@ -21,8 +21,7 @@ function Register() {
 
     // .:. Change the page
     // goto 'Login'
-    let navigate = useNavigate()
-    const navigateToLogin = () => { navigate('/login') }
+    let navigate = useNavigate();
 
     // .:. Database Reference
     // refer the realtime database
@@ -35,12 +34,13 @@ function Register() {
         if (firstname && surname && agent && role && username && password && confirmPassword) {
             if (password === confirmPassword) {
                 createUserWithEmailAndPassword(auth, username, password).then((userCredential) => {
+                    alert('บันทึกข้อมูลการสมัครของคุณและสามารถเข้าสู่ระบบได้แล้ว')
+                    SignUp(agent, firstname, surname);
+                    navigate('/login');
                     console.log(userCredential);
                 }).catch((error) => {
                     console.log(error);
                 });
-                SignUp(agent, firstname, surname);
-                alert('บันทึกข้อมูลการสมัครของคุณและสามารถเข้าสู่ระบบได้แล้ว')
             }
             else {
                 alert('คุณกรอกรหัสผ่านไม่ตรงกัน กรุณาตรวจสอบความถูกต้อง')
@@ -53,7 +53,7 @@ function Register() {
         set(push_db, {
             db_role: role,
             db_username: username,
-            db_password: password,
+            db_timestamp: null,
         })
     }
 
@@ -96,7 +96,8 @@ function Register() {
                             <h2 className='NormalFont'
                                 style={{
                                     textAlign: 'center'
-                                }}> กรุณากรอกข้อมูลด้วยความเป็นจริง </h2>
+                                }}> กรุณากรอกข้อมูลด้วยความเป็นจริง
+                            </h2>
                         </span>
                         <br />
                         {/* {ช่องกรอก "๊Username" เจ้าหน้าที่} */}

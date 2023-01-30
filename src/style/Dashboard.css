@@ -6,3 +6,14 @@ h5,
 h6 {
     margin: 0.75rem 0;
 }
+
+.text-button {
+    background-color: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.text-button:hover {
+    background-color: 'yellow';
+}

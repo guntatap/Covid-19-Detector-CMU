@@ -42,7 +42,10 @@ function Login() {
         e.preventDefault();
         signInWithEmailAndPassword(auth, username, password).then((userCredential) => {
             console.log(userCredential);
+            alert('เข้าสู่ระบบสำเร็จ');
+            NavigateToDashboard();
         }).catch((error) => {
+            alert('เกิดปัญหาในการเข้าสู่ระบบ เนื่องจากอาจไม่มีข้อมูลนี้ในการสมัครใช้งาน');
             console.log(error);
         });
     }
